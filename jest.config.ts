@@ -27,6 +27,7 @@ export default async (): Promise<Config.InitialOptions> => ({
     '^@http(.*)$': '<rootDir>/src/http$1',
     '^@pages(.*)$': '<rootDir>/src/pages$1',
     '^@routes(.*)$': '<rootDir>/src/routes$1',
+    '^@mock-data(.*)$': '<rootDir>/src/mock-data$1',
     '^.+\\.(sass|scss)$': 'identity-obj-proxy',
   },
   snapshotSerializers: [ 'enzyme-to-json/serializer' ],

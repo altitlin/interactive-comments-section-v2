@@ -43,7 +43,8 @@
       "@components": [ "./components" ],
       "@http/*": [ "./http/*" ],
       "@pages": [ "./pages" ],
-      "@routes": [ "./routes" ]
+      "@routes": [ "./routes" ],
+      "@mock-data": [ "./mock-data" ]
     }
   },
   "include": [

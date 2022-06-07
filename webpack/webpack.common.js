@@ -47,6 +47,7 @@ module.exports = {
       '@http': path.resolve(__dirname, '..', 'src', 'http'),
       '@pages': path.resolve(__dirname, '..', 'src', 'pages'),
       '@routes': path.resolve(__dirname, '..', 'src', 'routes'),
+      '@mock-data': path.resolve(__dirname, '..', 'src', 'mock-data'),
     },
     extensions: [ '.ts', '.tsx', '.js', '.jsx' ],
   },
