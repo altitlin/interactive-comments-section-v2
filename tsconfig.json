@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "ScriptHost"
+    ],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "outDir": "./dist",
+    "rootDirs": [
+      "./src"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@utils": [ "./common/utils" ],
+      "@styles": [ "./common/styles" ],
+      "@types": [ "./common/types" ],
+      "@icons": [ "./common/icons" ],
+      "@constants": [ "./common/constants" ],
+      "@components": [ "./components" ],
+      "@http/*": [ "./http/*" ],
+      "@pages": [ "./pages" ],
+      "@routes": [ "./routes" ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "./jest.config.ts",
+    "./setupJest.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "webpack"
+  ]
+}
