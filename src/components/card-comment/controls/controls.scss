@@ -1,0 +1,34 @@
+@import '~@styles/colors.scss';
+
+.cardCommentBtnControl {
+  background-color: transparent;
+  border: none !important;
+  outline: none !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  font-weight: 800 !important;
+  text-transform: capitalize !important;
+  color: $moderate-blue !important;
+  transition: opacity 0.2s ease !important;
+  opacity: 1 !important;
+
+  &:hover {
+    opacity: .4 !important;
+    background-color: transparent !important;
+  }
+}
+
+.cardCommentBtnControlReply {
+  @extend .cardCommentBtnControl;
+  color: $moderate-blue !important;
+}
+
+.cardCommentBtnControlDelete {
+  @extend .cardCommentBtnControl;
+  color: $soft-red !important;
+}
+
+.cardCommentBtnControlEdit {
+  @extend .cardCommentBtnControl;
+  color: $moderate-blue !important;
+}
