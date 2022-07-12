@@ -31,8 +31,8 @@ module.exports = {
         use: [ 'style-loader', 'css-loader' ],
       },
       {
-        test: /\.(otf|svg)$/,
-        type: 'asset/inline',
+        test: /\.svg$/,
+        use: [ '@svgr/webpack' ],
       },
     ],
   },
