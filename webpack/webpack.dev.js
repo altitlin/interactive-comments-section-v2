@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 
 module.exports = {
   mode: 'development',
@@ -28,9 +29,15 @@ module.exports = {
     ],
   },
   devServer: {
+    compress: true,
     port: 4242,
     open: true,
     hot: true,
     historyApiFallback: true,
+    http2: true,
+    https: {
+      key: fs.readFileSync(path.resolve(__dirname, 'certs', 'localhost.key')),
+      cert: fs.readFileSync(path.resolve(__dirname, 'certs', 'localhost.crt')),
+    },
   },
 }
