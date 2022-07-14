@@ -1,4 +1,5 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -6,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   entry: path.resolve(__dirname, '..', 'src', 'index.tsx'),
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', 'src', 'index.html'),
     }),
@@ -38,16 +40,15 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@utils': path.resolve(__dirname, '..', 'src', 'common', 'utils'),
+      '@icons': path.resolve(__dirname, '..', 'src', 'common', 'icons'),
       '@styles': path.resolve(__dirname, '..', 'src', 'common', 'styles'),
       '@types': path.resolve(__dirname, '..', 'src', 'common', 'types'),
-      '@constants': path.resolve(__dirname, '..', 'src', 'common', 'constants'),
-      '@icons': path.resolve(__dirname, '..', 'src', 'common', 'icons'),
+      '@utils': path.resolve(__dirname, '..', 'src', 'common', 'utils'),
       '@components': path.resolve(__dirname, '..', 'src', 'components'),
+      '@feature': path.resolve(__dirname, '..', 'src', 'feature'),
       '@http': path.resolve(__dirname, '..', 'src', 'http'),
+      '@navigation': path.resolve(__dirname, '..', 'src', 'navigation'),
       '@pages': path.resolve(__dirname, '..', 'src', 'pages'),
-      '@routes': path.resolve(__dirname, '..', 'src', 'routes'),
-      '@mock-data': path.resolve(__dirname, '..', 'src', 'mock-data'),
     },
     extensions: [ '.ts', '.tsx', '.js', '.jsx' ],
   },

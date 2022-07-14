@@ -35,16 +35,15 @@
     "sourceMap": true,
     "baseUrl": "./src",
     "paths": {
-      "@utils": [ "./common/utils" ],
+      "@icons": [ "./common/icons" ],
       "@styles": [ "./common/styles" ],
       "@types": [ "./common/types" ],
-      "@icons": [ "./common/icons" ],
-      "@constants": [ "./common/constants" ],
+      "@utils": [ "./common/utils" ],
       "@components": [ "./components" ],
+      "@feature": [ "./feature" ],
       "@http/*": [ "./http/*" ],
-      "@pages": [ "./pages" ],
-      "@routes": [ "./routes" ],
-      "@mock-data": [ "./mock-data" ]
+      "@navigation": [ "./navigation" ],
+      "@pages": [ "./pages" ]
     }
   },
   "include": [

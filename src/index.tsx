@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
-import { RouterConfig } from '@routes'
+import { RouterConfig } from '@navigation'
 
 import { App } from './App'
 
