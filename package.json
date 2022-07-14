@@ -8,7 +8,8 @@
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx}\"",
-    "test": "jest"
+    "test": "jest",
+    "fake-api": "json-server db.json -p 3001 -r routes.json -d 200 -w"
   },
   "keywords": [
     "ReactJS",
@@ -40,6 +41,7 @@
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^8.0.0",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
     "eslint": "^8.17.0",
@@ -56,6 +58,7 @@
     "jest": "^28.1.1",
     "jsdom": "^19.0.0",
     "jsdom-global": "^3.0.2",
+    "json-server": "^0.17.0",
     "mini-css-extract-plugin": "^2.6.0",
     "sass": "^1.52.2",
     "sass-loader": "^13.0.0",

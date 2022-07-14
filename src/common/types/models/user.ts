@@ -1,4 +1,4 @@
-export type User = {
+export interface User {
   image: string
   username: string
 }
