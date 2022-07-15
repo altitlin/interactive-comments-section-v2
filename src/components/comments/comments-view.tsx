@@ -1,25 +1,31 @@
 import React, { FC } from 'react'
 
-import { CommentWithReplies } from '@types'
+import { Comment } from '@models'
 import { CardComment } from '@components'
 
 import styles from './comments.scss'
 
 type CommentsViewProps = {
-  comments: CommentWithReplies[]
+  comments: Comment[]
   currentUserName: string
 }
 
-export const CommentsView: FC<CommentsViewProps> = ({ comments, currentUserName }) => (
-  <div className={styles.comments}>
-    {comments.map(({ id, user, ...props }) => (
-      <CardComment
-        key={id}
-        id={id}
-        isOwner={currentUserName === user.username}
-        user={user}
-        {...props}
-      />
-    ))}
-  </div>
-)
+export const CommentsView: FC<CommentsViewProps> = ({ comments, currentUserName }) => {
+  const renderCardComment = ({ id, user, ...rest }: Comment) => (
+    <CardComment
+      key={id}
+      id={id}
+      isOwner={currentUserName === user.username}
+      user={user}
+      {...rest}
+    >
+      {rest.replies?.map(renderCardComment)}
+    </CardComment>
+  )
+
+  return (
+    <div className={styles.comments}>
+      {comments.map(renderCardComment)}
+    </div>
+  )
+}

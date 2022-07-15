@@ -37,11 +37,11 @@
     "paths": {
       "@icons": [ "./common/icons" ],
       "@styles": [ "./common/styles" ],
-      "@types": [ "./common/types" ],
       "@utils": [ "./common/utils" ],
       "@components": [ "./components" ],
       "@feature": [ "./feature" ],
       "@http/*": [ "./http/*" ],
+      "@models": [ "./models" ],
       "@navigation": [ "./navigation" ],
       "@pages": [ "./pages" ]
     }
