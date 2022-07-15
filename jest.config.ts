@@ -20,11 +20,11 @@ export default async (): Promise<Config.InitialOptions> => ({
   moduleNameMapper: {
     '^@icons(.*)$': '<rootDir>/src/common/icons$1',
     '^@styles(.*)$': '<rootDir>/src/common/styles$1',
-    '^@types(.*)$': '<rootDir>/src/common/types$1',
     '^@utils(.*)$': '<rootDir>/src/common/utils$1',
     '^@components(.*)$': '<rootDir>/src/components$1',
     '^@feature(.*)$': '<rootDir>/src/feature$1',
     '^@http(.*)$': '<rootDir>/src/http$1',
+    '^@models(.*)$': '<rootDir>/src/models$1',
     '^@navigation(.*)$': '<rootDir>/src/navigation$1',
     '^@pages(.*)$': '<rootDir>/src/pages$1',
     '^.+\\.(sass|scss)$': 'identity-obj-proxy',

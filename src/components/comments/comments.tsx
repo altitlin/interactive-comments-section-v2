@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useComments } from '@feature'
-import { CommentWithReplies } from '@types'
+import { Comment } from '@models'
 
 import { CommentsView } from './comments-view'
 
@@ -12,7 +12,7 @@ export const Comments = () => {
 
   return (
     <CommentsView
-      comments={comments as CommentWithReplies[]}
+      comments={comments as Comment[]}
       currentUserName="juliusomo"
     />
   )

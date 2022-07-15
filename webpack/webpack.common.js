@@ -42,11 +42,11 @@ module.exports = {
     alias: {
       '@icons': path.resolve(__dirname, '..', 'src', 'common', 'icons'),
       '@styles': path.resolve(__dirname, '..', 'src', 'common', 'styles'),
-      '@types': path.resolve(__dirname, '..', 'src', 'common', 'types'),
       '@utils': path.resolve(__dirname, '..', 'src', 'common', 'utils'),
       '@components': path.resolve(__dirname, '..', 'src', 'components'),
       '@feature': path.resolve(__dirname, '..', 'src', 'feature'),
       '@http': path.resolve(__dirname, '..', 'src', 'http'),
+      '@models': path.resolve(__dirname, '..', 'src', 'models'),
       '@navigation': path.resolve(__dirname, '..', 'src', 'navigation'),
       '@pages': path.resolve(__dirname, '..', 'src', 'pages'),
     },

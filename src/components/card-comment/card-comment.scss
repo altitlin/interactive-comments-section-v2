@@ -1,13 +1,21 @@
 @import '~@styles/colors.scss';
 
+.cardCommentContainer {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  & .cardComment {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
 .cardComment {
   padding: 20px;
 	background-color: $white;
 	border-radius: 10px;
-
-  &:not(:last-child) {
-    margin-bottom: 15px;
-  }
 
   &User {
     &Avatar {
@@ -49,5 +57,26 @@
     color: $grayish-blue;
     font-size: 1.125rem;
     line-height: 1.625rem;
+
+    &ReplyingTo {
+      @extend .cardCommentUserName;
+      color: $moderate-blue;
+    }
+  }
+
+  &Replies {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+
+    &Seperator {
+      order: -1;
+    }
+
+    &::before {
+      content: '';
+      border: 1px solid $light-gray;
+      align-self: stretch;
+    }
   }
 }
