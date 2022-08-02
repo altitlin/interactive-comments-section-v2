@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  fake-api:
+    image: 'interactive-comments-section-fake-api'
+    build: ./fake-api
+    ports:
+      - 3030:3030
+    volumes:
+      - ./fake-api/db.json:/fake-api/db.json
+      - ./fake-api/routes.json:/fake-api/routes.json
+      - ./fake-api/cors.js:/fake-api/cors.js
+      - /fake-api/node_modules
+  frontend:
+    image: 'interactive-comments-section-front-dev'
+    build: ./client
+    ports:
+      - 4242:4242
+    volumes:
+      - ./client/src:/app/src
+      - /app/node_modules
+    env_file:
+      - ./client/.env
