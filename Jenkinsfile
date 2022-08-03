@@ -1,14 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Stage 1') {
+    stage('Build') {
       steps {
-        echo 'Hello world!'
-      }
-    }
-    stage('Stage 2') {
-      steps {
-        echo 'React app set up'
+        echo 'Hello Jenkins!'
       }
     }
   }
