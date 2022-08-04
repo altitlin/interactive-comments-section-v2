@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   fake-api:
-    image: 'interactive-comments-section-fake-api'
+    image: 'interactive-comments-section-fake-api-dev'
     build: ./fake-api
     ports:
       - 3030:3030

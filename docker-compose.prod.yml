@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  fake-api:
+    image: 'interactive-comments-section-fake-api-prod'
+    build:
+      context: ./fake-api
+      dockerfile: ./Dockerfile.prod
+    ports:
+      - 3030:3030
+    volumes:
+      - ./fake-api/db.json:/fake-api/db.json
+      - ./fake-api/routes.json:/fake-api/routes.json
+      - ./fake-api/cors.prod.js:/fake-api/cors.prod.js
+  frontend:
+    image: 'interactive-comments-section-front-prod'
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile.prod
+    ports:
+      - 80:80
+    env_file:
+      - ./client/.env

@@ -1,6 +1,8 @@
 const path = require('path')
 const fs = require('fs')
 
+const { WEBPACK_DEV_SERVER_PORT } = require('./constants')
+
 module.exports = {
   mode: 'development',
   output: {
@@ -30,7 +32,7 @@ module.exports = {
   },
   devServer: {
     compress: true,
-    port: 4242,
+    port: WEBPACK_DEV_SERVER_PORT,
     open: true,
     hot: true,
     historyApiFallback: true,

@@ -1,5 +1,7 @@
 FROM node:16
 
+ARG PORT=4242
+
 WORKDIR /app
 
 COPY package.json .
@@ -8,6 +10,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 4242:4242
+EXPOSE $PORT:$PORT
 
 CMD [ "npm", "run", "dev" ]
