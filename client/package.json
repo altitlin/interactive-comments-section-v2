@@ -82,5 +82,5 @@
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0"
   },
-  "proxy": "http://localhost:3030/api/"
+  "proxy": "http://interactive-comments-section.ru:3030/api/"
 }
