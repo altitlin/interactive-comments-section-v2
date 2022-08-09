@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "json-server ./db.json -m ./cors.js -H 0.0.0.0 -p 3030 -r ./routes.json -d 200 -w",
-    "build": "json-server ./db.json -m ./cors.prod.js -H 82.148.28.159 -p 3030 -r ./routes.json -d 200"
+    "build": "json-server ./db.json -m ./cors.prod.js -H 0.0.0.0 -p 3030 -r ./routes.json -d 200"
   },
   "keywords": [],
   "author": "",
