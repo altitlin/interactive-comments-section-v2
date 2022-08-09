@@ -10,6 +10,7 @@ services:
     volumes:
       - ./fake-api/db.json:/fake-api/db.json
       - ./fake-api/routes.json:/fake-api/routes.json
+      - ./fake-api/cors.prod.js:/fake-api/cors.prod.js
   frontend:
     image: 'interactive-comments-section-front-prod'
     build:
