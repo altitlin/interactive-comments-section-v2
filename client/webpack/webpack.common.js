@@ -40,15 +40,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@icons': path.resolve(__dirname, '..', 'src', 'common', 'icons'),
-      '@styles': path.resolve(__dirname, '..', 'src', 'common', 'styles'),
-      '@utils': path.resolve(__dirname, '..', 'src', 'common', 'utils'),
       '@components': path.resolve(__dirname, '..', 'src', 'components'),
-      '@feature': path.resolve(__dirname, '..', 'src', 'feature'),
-      '@http': path.resolve(__dirname, '..', 'src', 'http'),
-      '@models': path.resolve(__dirname, '..', 'src', 'models'),
+      '@features': path.resolve(__dirname, '..', 'src', 'features'),
+      '@lib': path.resolve(__dirname, '..', 'src', 'lib'),
       '@navigation': path.resolve(__dirname, '..', 'src', 'navigation'),
       '@pages': path.resolve(__dirname, '..', 'src', 'pages'),
+      '@styles': path.resolve(__dirname, '..', 'src', 'styles'),
     },
     extensions: [ '.ts', '.tsx', '.js', '.jsx' ],
   },

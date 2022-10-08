@@ -1,0 +1,32 @@
+.commentBtnControl {
+  background-color: transparent;
+  border: none !important;
+  outline: none !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  font-weight: 800 !important;
+  text-transform: capitalize !important;
+  color: var(--ics-color-blue-1) !important;
+  transition: opacity 0.2s ease !important;
+  opacity: 1 !important;
+
+  &:hover {
+    opacity: .4 !important;
+    background-color: transparent !important;
+  }
+}
+
+.commentBtnControlReply {
+  @extend .commentBtnControl;
+  color: var(--ics-color-blue-1) !important;
+}
+
+.commentBtnControlDelete {
+  @extend .commentBtnControl;
+  color: var(--ics-color-red-1) !important;
+}
+
+.commentBtnControlEdit {
+  @extend .commentBtnControl;
+  color: var(--ics-color-blue-1) !important;
+}

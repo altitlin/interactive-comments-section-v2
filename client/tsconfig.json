@@ -30,20 +30,19 @@
       "./src"
     ],
     "typeRoots": [
+      "src/@types/assets",
+      "src/@types/styles",
       "./node_modules/@types"
     ],
     "sourceMap": true,
     "baseUrl": "./src",
     "paths": {
-      "@icons": [ "./common/icons" ],
-      "@styles": [ "./common/styles" ],
-      "@utils": [ "./common/utils" ],
       "@components": [ "./components" ],
-      "@feature": [ "./feature" ],
-      "@http/*": [ "./http/*" ],
-      "@models": [ "./models" ],
+      "@features/*": [ "./features/*" ],
+      "@lib": [ "./lib" ],
       "@navigation": [ "./navigation" ],
-      "@pages": [ "./pages" ]
+      "@pages": [ "./pages" ],
+      "@styles": [ "./common/styles" ]
     }
   },
   "include": [
