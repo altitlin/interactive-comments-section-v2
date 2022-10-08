@@ -1,0 +1,80 @@
+.commentContainer {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  & .comment {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.comment {
+  padding: 24px;
+	background-color: var(--ics-color-white);
+	border-radius: 10px;
+
+  &User {
+    &Avatar {
+      width: 30px !important;
+      height: 30px !important;
+    }
+
+    &Name {
+      color: var(--ics-color-blue-2);
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+  &Badge {
+    height: 100% !important;
+    margin-left: 10px;
+    background-color: var(--ics-color-blue-1) !important;
+    border-radius: 2px !important;
+    font-size: 0.875rem !important;
+
+    & span {
+      color: var(--ics-color-white) !important;
+      padding-right: 5px !important;
+      padding-left: 5px !important;
+    }
+  }
+
+  &CreatedAt {
+    color: var(--ics-color-blue-3);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  &Text {
+    margin: 0;
+    padding: 0;
+    color: var(--ics-color-blue-3);
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+
+    &ReplyingTo {
+      @extend .commentUserName;
+      color: var(--ics-color-blue-1);
+    }
+  }
+
+  &Replies {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+
+    &Seperator {
+      order: -1;
+    }
+
+    &::before {
+      content: '';
+      border: 1px solid var(--ics-color-gray-1);
+      align-self: stretch;
+    }
+  }
+}

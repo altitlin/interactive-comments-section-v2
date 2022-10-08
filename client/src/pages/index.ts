@@ -1,2 +1,2 @@
-export * from './comments-page'
-export * from './not-found-page'
+export { CommentsPage } from './comments'
+export { NotFoundPage } from './not-found'
