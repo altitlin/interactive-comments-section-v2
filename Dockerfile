@@ -1,6 +1,4 @@
-FROM node:16
-
-ARG PORT=4242
+FROM node:16-alpine AS builder
 
 WORKDIR /app
 
@@ -10,8 +8,22 @@ RUN npm ci
 
 COPY --chown=node . .
 
-EXPOSE $PORT:$PORT
+RUN npm run build
 
 USER node
 
-CMD [ "npm", "run", "dev" ]
+FROM nginx:1.23.1-alpine
+
+RUN apk add bash
+
+COPY --chown=node nginx.conf /etc/nginx/conf.d/default.conf
+COPY --chown=node certs/* /etc/ssl/
+
+WORKDIR /usr/share/nginx/html
+
+COPY --chown=node --from=builder /app/dist/* ./
+COPY --chown=node *.sh ./
+
+RUN chmod +x *.sh
+
+CMD ["/usr/share/nginx/html/nginx_start.sh"]
