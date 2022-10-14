@@ -18,7 +18,7 @@ export const CommentControls: FC<CommentControlsProps> = ({
   <>
     <RenderIf isTrue={!isOwner}>
       <Button
-        variant='text'
+        variant="text"
         startIcon={<ReplyIcon />}
         className={styles.commentBtnControlReply}
       >
@@ -28,14 +28,14 @@ export const CommentControls: FC<CommentControlsProps> = ({
     <RenderIf isTrue={isOwner}>
       <Grid item>
         <Button
-          variant='text'
+          variant="text"
           startIcon={<DeleteIcon />}
           className={styles.commentBtnControlDelete}
         >
           Delete
         </Button>
         <Button
-          variant='text'
+          variant="text"
           startIcon={<EditIcon />}
           className={styles.commentBtnControlEdit}
         >

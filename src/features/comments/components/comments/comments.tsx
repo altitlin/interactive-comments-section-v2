@@ -14,7 +14,7 @@ type CommentsProps = {
 
 export const Comments: FC<CommentsProps> = ({
   comments,
-  currentUserName
+  currentUserName,
 }) => {
   const renderComment = ({ id, user, ...rest }: CommentType) => (
     <Comment

@@ -4,12 +4,14 @@ ARG PORT=4242
 
 WORKDIR /app
 
-COPY package.json .
+COPY --chown=node package*.json ./
 
-RUN npm install
+RUN npm ci
 
-COPY . .
+COPY --chown=node . .
 
 EXPOSE $PORT:$PORT
+
+USER node
 
 CMD [ "npm", "run", "dev" ]

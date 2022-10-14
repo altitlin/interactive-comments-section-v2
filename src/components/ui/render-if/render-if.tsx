@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC, PropsWithChildren } from 'react'
 
 type RenderIfProps = PropsWithChildren<{

@@ -12,7 +12,7 @@ export const CommentsPage = () => {
     <>
       <Comments
         comments={comments}
-        currentUserName='juliusomo'
+        currentUserName="juliusomo"
       />
       <CreateComment />
     </>

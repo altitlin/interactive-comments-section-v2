@@ -4,5 +4,5 @@ import { API } from './constants'
 import { Comment } from './model'
 
 export const getComments = () => httpRequest<Comment[]>({
-  url: API.GET_COMMENTS
+  url: API.GET_COMMENTS,
 })
