@@ -75,7 +75,7 @@
     "max-nested-callbacks": [ "error", 3 ],
     "max-params": [ "error", 3 ],
     "no-console": "warn",
-    "no-magic-numbers": "error",
+    "no-magic-numbers": [ "error", { "ignoreArrayIndexes": true, "ignore": ["1n"] } ],
     "no-multi-assign": "error",
     "no-return-assign": "off",
     "guard-for-in": "error",
