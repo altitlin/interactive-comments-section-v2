@@ -11,10 +11,10 @@ type CommentScoreProps = {
 }
 
 export const CommentScore: FC<CommentScoreProps> = ({
-  score
+  score,
 }) => (
   <Button
-    variant='contained'
+    variant="contained"
     startIcon={<PlusIcon />}
     endIcon={<MinusIcon />}
     className={styles.btnScore}

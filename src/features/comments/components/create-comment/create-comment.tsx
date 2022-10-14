@@ -15,7 +15,6 @@ export const CreateComment = withAvatarFormComment(() => {
 
   const onSend: FormCommentProps['onSubmit'] = useCallback(
     (values, form) => {
-      console.log(values)
       form?.reset()
     },
     []
@@ -24,7 +23,7 @@ export const CreateComment = withAvatarFormComment(() => {
   return (
     <FormComment
       initialValues={initialValues}
-      nameSubmitButton='Send'
+      nameSubmitButton="Send"
       onSubmit={onSend}
     />
   )

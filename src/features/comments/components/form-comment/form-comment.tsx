@@ -30,14 +30,14 @@ export const FormComment: FC<FormCommentProps> = ({
       <form onSubmit={handleSubmit} className={styles.formComment}>
         <FinalFormTextField
           fullWidth
-          name='comment'
-          placeholder='Add a comment...'
-          variant='outlined'
+          name="comment"
+          placeholder="Add a comment..."
+          variant="outlined"
           className={styles.formCommentTextarea}
         />
         <Button
-          variant='contained'
-          type='submit'
+          variant="contained"
+          type="submit"
           disabled={submitting || pristine}
           className={styles.formCommentButton}
         >
