@@ -22,6 +22,7 @@
     "dev": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "test": "jest",
+    "test:cov": "jest --coverage",
     "prepare": "husky install"
   },
   "browsersList": {
