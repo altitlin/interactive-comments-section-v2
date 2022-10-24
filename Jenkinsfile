@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Installing packages') {
+      steps {
+        sh 'npm install'
+      }
+    }
+
   }
 }
