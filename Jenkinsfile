@@ -18,7 +18,10 @@ pipeline {
 
     stage('Unit tests') {
       steps {
-        sh 'npm run test'
+        nodejs('nodejs') {
+          sh 'npm run test'
+        }
+
       }
     }
 
