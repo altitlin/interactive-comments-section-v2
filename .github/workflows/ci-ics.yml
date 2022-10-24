@@ -5,6 +5,9 @@ on:
   pull_request:
     branches:
       - dev
+  push:
+    branches:
+      - dev
 
 defaults:
   run:
@@ -20,8 +23,14 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.0
+          cache: npm
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run eslint
         run: npx lint-staged
@@ -34,8 +43,14 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.0
+          cache: npm
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run tests
         run: npm run test
@@ -48,8 +63,14 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.0
+          cache: npm
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
