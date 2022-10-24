@@ -5,6 +5,11 @@ on:
   push:
     branches:
       - dev
+  workflow_dispatch:
+    inputs:
+      perform_deploy:
+        required: true
+        type: boolean
 
 defaults:
   run:
@@ -78,6 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: ['lint', 'unit-tests', 'build']
 
+    if: ${{ inputs.perform_deploy }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
