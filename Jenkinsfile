@@ -1,10 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Checkout Code') {
       steps {
-        echo 'Hello Jenkins!'
+        git(url: 'https://github.com/altitlin/interactive-comments-section-v2', branch: 'dev')
       }
     }
+
   }
 }
