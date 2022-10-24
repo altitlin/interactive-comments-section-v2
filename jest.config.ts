@@ -1,6 +1,6 @@
-import type { Config } from '@jest/types'
+import type { Config } from 'jest'
 
-export default async (): Promise<Config.InitialOptions> => ({
+export default async (): Promise<Config> => ({
   verbose: true,
   preset: 'ts-jest',
   roots: [ '<rootDir>/src' ],
@@ -16,7 +16,7 @@ export default async (): Promise<Config.InitialOptions> => ({
   ],
   coverageReporters: [ 'lcov' ],
   setupFiles: [ '<rootDir>/setupJest.ts' ],
-  testRegex: '\\.test\\.tsx?$',
+  testRegex: '.*\\.test\\.tsx?$',
   moduleNameMapper: {
     '^@components(.*)$': '<rootDir>/src/components$1',
     '^@features(.*)$': '<rootDir>/src/features$1',
@@ -26,7 +26,6 @@ export default async (): Promise<Config.InitialOptions> => ({
     '^@styles(.*)$': '<rootDir>/src/styles$1',
     '^.+\\.(sass|scss)$': 'identity-obj-proxy',
   },
-  snapshotSerializers: [ 'enzyme-to-json/serializer' ],
   transform: {
     '^.+\\.(ts|tsx)$': '<rootDir>/node_modules/ts-jest',
     '\\.(png|svg)$': '<rootDir>/__mocks__/fileTransformer.js',
