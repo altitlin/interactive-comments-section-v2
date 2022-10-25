@@ -1,3 +1,5 @@
+[![CI interactive comments section](https://github.com/altitlin/interactive-comments-section-v2/actions/workflows/ci.yml/badge.svg?branch=dev&event=push)](https://github.com/altitlin/interactive-comments-section-v2/actions/workflows/ci.yml)
+
 # Intro
 
 This is a interactive comments section.
