@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react'
+import React, { Children, FC, PropsWithChildren } from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Avatar from '@mui/material/Avatar'
@@ -67,7 +67,7 @@ export const Comment: FC<CommentProps> = ({
         </Grid>
       </Grid>
     </Box>
-    <RenderIf isTrue={!!children}>
+    <RenderIf isTrue={!!Children.count(children)}>
       <Box className={styles.commentReplies}>
         <div className={styles.commentRepliesSeperator} />
         <div>{children}</div>

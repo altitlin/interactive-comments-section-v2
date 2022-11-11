@@ -4,8 +4,13 @@ const instance = axios.create({
   baseURL: process.env.BASE_URL,
 })
 
+export enum HTTPMethods {
+  GET = 'GET',
+  POST = 'POST'
+}
+
 export const httpRequest = async <T>({
-  method = 'get',
+  method = HTTPMethods.GET,
   ...rest
 }: AxiosRequestConfig) => {
   try {

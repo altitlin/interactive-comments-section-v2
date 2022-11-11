@@ -5,9 +5,38 @@
 
   &Textarea {
     margin-right: 15px !important;
+
+    & fieldset {
+      display: none;
+    }
+
+    & input {
+      color: var(--ics-color-blue-3);
+      font-family: 'Rubik', sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+      padding: 12px 20px;
+      border-radius: 10px !important;
+      border: 1px solid var(--ics-color-gray-1) !important;
+
+      &:focus {
+        border-color: var(--ics-color-blue-1) !important;
+      }
+    }
   }
 
   &Button {
+    color: var(--ics-color-white) !important;
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+    background-color: var(--ics-color-blue-1) !important;
 
+    &:disabled {
+      opacity: 0.4;
+      pointer-events: initial !important;
+      cursor: not-allowed !important;
+    }
   }
 }

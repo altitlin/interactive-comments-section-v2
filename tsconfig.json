@@ -39,7 +39,7 @@
     "paths": {
       "@components": [ "./components" ],
       "@features/*": [ "./features/*" ],
-      "@lib": [ "./lib" ],
+      "@lib/*": [ "./lib/*" ],
       "@navigation": [ "./navigation" ],
       "@pages": [ "./pages" ],
       "@styles": [ "./common/styles" ]
