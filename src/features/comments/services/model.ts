@@ -15,3 +15,8 @@ interface CommentReplyingTo extends BasicCommon {
 export interface Comment extends CommentReplyingTo {
   replies?: CommentReplyingTo[]
 }
+
+export interface CreateCommentDto {
+  content: BasicCommon['content']
+  user: string
+}

@@ -26,7 +26,7 @@ export const FormComment: FC<FormCommentProps> = ({
   <Form<InitialValues>
     initialValues={initialValues}
     onSubmit={onSubmit}
-    render={({ handleSubmit, submitting, pristine }) => (
+    render={({ handleSubmit, values, submitting }) => (
       <form onSubmit={handleSubmit} className={styles.formComment}>
         <FinalFormTextField
           fullWidth
@@ -38,7 +38,7 @@ export const FormComment: FC<FormCommentProps> = ({
         <Button
           variant="contained"
           type="submit"
-          disabled={submitting || pristine}
+          disabled={submitting || !values.comment}
           className={styles.formCommentButton}
         >
           {nameSubmitButton}
