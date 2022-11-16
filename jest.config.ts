@@ -19,7 +19,9 @@ export default async (): Promise<Config> => ({
   testRegex: '.*\\.test\\.tsx?$',
   moduleNameMapper: {
     '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@context(.*)$': '<rootDir>/src/context$1',
     '^@features(.*)$': '<rootDir>/src/features$1',
+    '^@hooks(.*)$': '<rootDir>/src/hooks$1',
     '^@lib(.*)$': '<rootDir>/src/lib$1',
     '^@navigation(.*)$': '<rootDir>/src/navigation$1',
     '^@pages(.*)$': '<rootDir>/src/pages$1',

@@ -41,7 +41,9 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, '..', 'src', 'components'),
+      '@context': path.resolve(__dirname, '..', 'src', 'context'),
       '@features': path.resolve(__dirname, '..', 'src', 'features'),
+      '@hooks': path.resolve(__dirname, '..', 'src', 'hooks'),
       '@lib': path.resolve(__dirname, '..', 'src', 'lib'),
       '@navigation': path.resolve(__dirname, '..', 'src', 'navigation'),
       '@pages': path.resolve(__dirname, '..', 'src', 'pages'),
