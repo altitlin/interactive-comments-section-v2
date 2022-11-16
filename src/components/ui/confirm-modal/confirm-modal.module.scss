@@ -1,0 +1,49 @@
+.confirmModal {
+  & .MuiDialog-paper {
+    margin: 0 !important;
+    padding: 35px 30px 30px;
+    width: 400px;
+    border-radius: 10px;
+  }
+
+  &Title {
+    margin-bottom: 25px !important;
+    padding: 0 !important;
+    color: var(--ics-color-blue-2);
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 1.5rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  &Content {
+    margin-bottom: 25px !important;
+    padding: 0 !important;
+    color: var(--ics-color-blue-3);
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+
+  &Actions {
+    justify-content: space-between !important;
+    padding: 0 !important;
+
+    & button {
+      width: 100%;
+      padding: 15px 0 !important;
+      border-radius: 8px !important;
+      font-family: 'Rubik', sans-serif !important;
+      font-size: 1rem !important;
+      line-height: 1.5rem !important;
+      font-weight: 500 !important;
+    }
+
+    &Cancel {
+      background-color: var(--ics-color-blue-3) !important;
+    }
+
+    &Delete {
+      background-color: var(--ics-color-red-1) !important;
+    }
+  }
+}

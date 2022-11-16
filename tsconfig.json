@@ -38,7 +38,9 @@
     "baseUrl": "./src",
     "paths": {
       "@components": [ "./components" ],
+      "@context": [ "./context" ],
       "@features/*": [ "./features/*" ],
+      "@hooks": [ "./hooks" ],
       "@lib/*": [ "./lib/*" ],
       "@navigation": [ "./navigation" ],
       "@pages": [ "./pages" ],

@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
+import { ConfirmModalProvider } from '@context'
 import { RouterConfig } from '@navigation'
 
 import { App } from './App'
@@ -20,7 +21,9 @@ root.render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <App>
-        <RouterConfig />
+        <ConfirmModalProvider>
+          <RouterConfig />
+        </ConfirmModalProvider>
       </App>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
