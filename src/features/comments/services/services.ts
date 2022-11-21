@@ -12,3 +12,8 @@ export const createComment = (commentDto: CreateCommentDto) => httpRequest<Comme
   url: API.COMMENTS,
   data: commentDto,
 })
+
+export const deleteComment = (id: number) => httpRequest({
+  method: HTTPMethods.DELETE,
+  url: `${API.COMMENTS}/${id}`,
+})

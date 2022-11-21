@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from 'react-query'
+import { v4 } from 'uuid'
 
 import { createComment, Comment, CreateCommentDto } from '@features/comments/services'
 
@@ -16,7 +17,13 @@ export const useCreateComment = () => {
 
       queryClient.setQueryData<CreateCommentDto | Comment[] | undefined>(
         [ QueryKeys.COMMENTS ],
-        old => (old ? (old as Comment[]).concat(createCommentDto as unknown as Comment) : old)
+        old => (old
+          ? (old as Comment[]).concat(({
+            ...createCommentDto,
+            _id: v4(),
+          }) as unknown as Comment)
+          : old
+        )
       )
 
       return { previousComments }

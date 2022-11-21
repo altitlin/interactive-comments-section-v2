@@ -17,6 +17,7 @@ type CommentProps = PropsWithChildren<CommentType & {
 }>
 
 export const Comment: FC<CommentProps> = ({
+  _id: id,
   content,
   // createdAt,
   score,
@@ -53,7 +54,7 @@ export const Comment: FC<CommentProps> = ({
               1 month ago
             </Grid>
             <Grid item xs display="flex" justifyContent="flex-end">
-              <CommentControls isOwner={!!isOwner} />
+              <CommentControls id={id} isOwner={!!isOwner} />
             </Grid>
           </Grid>
           <Grid item component="p" xs={11} className={styles.commentText}>

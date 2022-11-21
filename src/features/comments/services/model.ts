@@ -1,7 +1,7 @@
 import { User } from '@features/user'
 
 interface BasicCommon {
-  id: number
+  _id: number
   content: string
   createdAt: string
   score: number

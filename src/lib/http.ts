@@ -6,7 +6,8 @@ const instance = axios.create({
 
 export enum HTTPMethods {
   GET = 'GET',
-  POST = 'POST'
+  POST = 'POST',
+  DELETE = 'DELETE'
 }
 
 export const httpRequest = async <T>({
