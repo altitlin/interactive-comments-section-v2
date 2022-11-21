@@ -1,0 +1,21 @@
+.deleteConfirmModal {
+  &Btn {
+    width: 100%;
+    padding: 15px 0 !important;
+    border-radius: 8px !important;
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+  }
+
+  &BtnCancel {
+    @extend .deleteConfirmModalBtn;
+    background-color: var(--ics-color-blue-3) !important;
+  }
+
+  &BtnDelete {
+    @extend .deleteConfirmModalBtn;
+    background-color: var(--ics-color-red-1) !important;
+  }
+}

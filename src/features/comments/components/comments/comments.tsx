@@ -16,10 +16,10 @@ export const Comments: FC<CommentsProps> = ({
   comments,
   currentUserName,
 }) => {
-  const renderComment = ({ id, user, ...rest }: CommentType) => (
+  const renderComment = ({ _id, user, ...rest }: CommentType) => (
     <Comment
-      key={id}
-      id={id}
+      key={_id}
+      _id={_id}
       isOwner={currentUserName === user.username}
       user={user}
       {...rest}
