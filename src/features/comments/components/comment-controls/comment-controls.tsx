@@ -1,39 +1,57 @@
-import React, { FC, useCallback } from 'react'
+import React, { memo } from 'react'
+import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
 
-import { Comment } from '@features/comments/services/model'
-import { useDeleteComment } from '@features/comments/hooks/use-delete-comment'
-import { useConfirmModalUpdater } from '@context'
+import { RenderIf } from '@components'
+import { ReplyIcon, DeleteIcon, EditIcon } from '@features/comments/assets/icons'
 
-import { CommentControlsView } from './comment-controls-view'
+import styles from './comment-controls.module.scss'
 
 type CommentControlsProps = {
-  id: Comment['_id']
   isOwner: boolean
+  onDelete: () => void
+  onEdit: () => void
 }
 
-export const CommentControls: FC<CommentControlsProps> = ({
-  id,
-  isOwner,
-}) => {
-  const { showConfirmModal } = useConfirmModalUpdater()
-  const { mutate } = useDeleteComment()
-
-  const onDelete = useCallback(async () => {
-    try {
-      const isConfirmed = await showConfirmModal()
-
-      if (isConfirmed) {
-        mutate(id)
-      }
-    } catch (error) {
-      // TODO: should be implemented logic handling error
-    }
-  }, [ id, showConfirmModal, mutate ])
-
-  return (
-    <CommentControlsView
-      isOwner={isOwner}
-      onDelete={onDelete}
-    />
+export const CommentControls = memo(
+  Object.assign(
+    ({
+      isOwner,
+      onDelete,
+      onEdit,
+    }: CommentControlsProps) => (
+      <>
+        <RenderIf isTrue={!isOwner}>
+          <Button
+            variant="text"
+            startIcon={<ReplyIcon />}
+            className={styles.commentBtnControlReply}
+          >
+            Reply
+          </Button>
+        </RenderIf>
+        <RenderIf isTrue={isOwner}>
+          <Grid item>
+            <Button
+              variant="text"
+              startIcon={<DeleteIcon />}
+              className={styles.commentBtnControlDelete}
+              onClick={onDelete}
+            >
+              Delete
+            </Button>
+            <Button
+              variant="text"
+              startIcon={<EditIcon />}
+              onClick={onEdit}
+              className={styles.commentBtnControlEdit}
+            >
+              Edit
+            </Button>
+          </Grid>
+        </RenderIf>
+      </>
+    ),
+    { displayName: 'CommentControlsView' }
   )
-}
+)

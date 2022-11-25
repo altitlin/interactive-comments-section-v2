@@ -1,6 +1,7 @@
 import React, { ComponentProps, useCallback, useMemo } from 'react'
 
 import { FormComment } from '@features/comments/components/form-comment'
+import { NAMES_BUTTON } from '@features/comments/constants/form-comment'
 import {
   withAvatarFormComment
 } from '@features/comments/hocs/with-avatar-form-comment'
@@ -18,12 +19,15 @@ export const CreateComment = withAvatarFormComment(() => {
 
   const onCreate: FormCommentProps['onSubmit'] = useCallback(
     (values, form) => {
-      mutate({
+      const createdComment = {
         content: values.comment,
         // TODO: should be fxied
         user: '634852a212bc342cb3fbc0ff',
+      }
+
+      mutate(createdComment, {
+        onSuccess: () => form?.reset(),
       })
-      form?.reset()
     },
     [ mutate ]
   )
@@ -31,7 +35,7 @@ export const CreateComment = withAvatarFormComment(() => {
   return (
     <FormComment
       initialValues={initialValues}
-      nameSubmitButton="Send"
+      nameButton={NAMES_BUTTON.SEND}
       onSubmit={onCreate}
     />
   )

@@ -1,6 +1,21 @@
-.formComment {
+.formCommentRow {
   display: flex;
   align-items: flex-start;
+}
+
+.formCommentColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+
+  & > div {
+    margin-right: 0 !important;
+    margin-bottom: 15px;
+  }
+}
+
+.formComment {
   width: 100%;
 
   &Textarea {

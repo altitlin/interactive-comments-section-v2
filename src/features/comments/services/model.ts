@@ -1,7 +1,7 @@
 import { User } from '@features/user'
 
 interface BasicCommon {
-  _id: number
+  _id: string
   content: string
   createdAt: string
   score: number
@@ -20,3 +20,5 @@ export interface CreateCommentDto {
   content: BasicCommon['content']
   user: string
 }
+
+export type UpdateCommentDto = Partial<Comment>
