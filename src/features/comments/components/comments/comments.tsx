@@ -1,14 +1,14 @@
-import React, { FC } from 'react'
+import React, { FC, useState, useCallback } from 'react'
 
+import { useConfirmModalUpdater } from '@context'
 import { User } from '@features/user'
+import { useDeleteComment } from '@features/comments/hooks/use-delete-comment'
+import { Comment } from '@features/comments/services/model'
 
-import { Comment as CommentType } from '@features/comments/services/model'
-import { Comment } from '@features/comments/components/comment'
-
-import styles from './comments.module.scss'
+import { CommentsView } from './comments-view'
 
 type CommentsProps = {
-  comments: CommentType[]
+  comments: Comment[]
   currentUserName: User['username']
 }
 
@@ -16,21 +16,33 @@ export const Comments: FC<CommentsProps> = ({
   comments,
   currentUserName,
 }) => {
-  const renderComment = ({ _id, user, ...rest }: CommentType) => (
-    <Comment
-      key={_id}
-      _id={_id}
-      isOwner={currentUserName === user.username}
-      user={user}
-      {...rest}
-    >
-      {rest.replies?.map(renderComment)}
-    </Comment>
-  )
+  const { showConfirmModal } = useConfirmModalUpdater()
+  const { mutate } = useDeleteComment()
+
+  const [ editableCommentId, setEditableCommentId ] = useState('')
+
+  const onDelete = useCallback((id: Comment['_id']) => async () => {
+    try {
+      const isConfirmed = await showConfirmModal()
+
+      if (isConfirmed) {
+        mutate(id)
+      }
+    } catch (error) {
+      // TODO: should be implemented logic handling error
+    }
+  }, [ showConfirmModal, mutate ])
+
+  const resetEditableCommentId = useCallback(() => setEditableCommentId(''), [])
 
   return (
-    <div className={styles.comments}>
-      {comments.map(renderComment)}
-    </div>
+    <CommentsView
+      comments={comments}
+      currentUserName={currentUserName}
+      editableCommentId={editableCommentId}
+      onDelete={onDelete}
+      setEditableCommentId={setEditableCommentId}
+      resetEditableCommentId={resetEditableCommentId}
+    />
   )
 }

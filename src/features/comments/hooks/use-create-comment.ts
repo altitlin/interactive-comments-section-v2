@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from 'react-query'
 import { v4 } from 'uuid'
 
-import { createComment, Comment, CreateCommentDto } from '@features/comments/services'
+import { createComment, Comment } from '@features/comments/services'
 
 import { QueryKeys } from './constants'
 
@@ -11,20 +11,19 @@ export const useCreateComment = () => {
   return useMutation({
     mutationFn: createComment,
     onMutate: async (createCommentDto) => {
-      await queryClient.cancelQueries({ queryKey: [ QueryKeys.COMMENTS ] })
+      await queryClient.cancelQueries([ QueryKeys.COMMENTS ])
 
       const previousComments = queryClient.getQueryData<Comment[]>([ QueryKeys.COMMENTS ])
 
-      queryClient.setQueryData<CreateCommentDto | Comment[] | undefined>(
-        [ QueryKeys.COMMENTS ],
-        old => (old
-          ? (old as Comment[]).concat(({
+      if (previousComments) {
+        queryClient.setQueriesData([ QueryKeys.COMMENTS ], [
+          ...previousComments,
+          {
             ...createCommentDto,
             _id: v4(),
-          }) as unknown as Comment)
-          : old
-        )
-      )
+          },
+        ])
+      }
 
       return { previousComments }
     },
@@ -34,7 +33,7 @@ export const useCreateComment = () => {
       }
     },
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: [ QueryKeys.COMMENTS ] })
+      queryClient.invalidateQueries([ QueryKeys.COMMENTS ])
     },
   })
 }

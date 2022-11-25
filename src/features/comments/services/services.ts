@@ -1,19 +1,31 @@
 import { httpRequest, HTTPMethods } from '@lib/http'
 
 import { API } from './constants'
-import { Comment, CreateCommentDto } from './model'
+import {
+  CreateComment,
+  GetComments,
+  UpdateComment,
+  DeleteComment
+} from './types'
 
-export const getComments = () => httpRequest<Comment[]>({
-  url: API.COMMENTS,
-})
-
-export const createComment = (commentDto: CreateCommentDto) => httpRequest<Comment>({
+export const createComment: CreateComment = createCommentDto => httpRequest({
   method: HTTPMethods.POST,
   url: API.COMMENTS,
-  data: commentDto,
+  data: createCommentDto,
 })
 
-export const deleteComment = (id: number) => httpRequest({
+export const getComments: GetComments = () => httpRequest({
+  url: API.COMMENTS,
+})
+
+export const updateComment: UpdateComment = updateCommentDto => httpRequest({
+  method: HTTPMethods.PATCH,
+  // eslint-disable-next-line no-underscore-dangle
+  url: `${API.COMMENTS}/${updateCommentDto._id}`,
+  data: updateCommentDto,
+})
+
+export const deleteComment: DeleteComment = id => httpRequest({
   method: HTTPMethods.DELETE,
   url: `${API.COMMENTS}/${id}`,
 })
